@@ -7,9 +7,9 @@
         "prebuild": "npm run convert-schema",
         "build": "tsc --build",
         "watch": "tsc --build --watch",
-        "test": "echo \"Error: no test specified\" && exit 1",
         "prettier": "prettier --check .",
         "prettier-fix": "prettier --write .",
+        "test": "jest test",
         "convert-schema": "node utils/convert-schema.js && prettier --write src/config/types.ts"
     },
     "repository": {
