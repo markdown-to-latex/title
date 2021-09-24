@@ -1,6 +1,6 @@
 {
     "name": "@md-to-latex/title",
-    "version": "1.0.0-beta.2",
+    "version": "1.0.0-beta.3",
     "description": "MarkDown To LaTeX Titles",
     "main": "dist/index.js",
     "scripts": {

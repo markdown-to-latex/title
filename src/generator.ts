@@ -11,7 +11,7 @@ const generatorChain: {
         function: config => [
             `
 \\newcommand{\\topic}{${config.general.document.topic}}
-\\newcommand{\\year}{${config.general.document.year}}
+\\renewcommand{\\year}{${config.general.document.year}}
 \\newcommand{\\student}{${config.general.author.name}}
 `,
         ],
