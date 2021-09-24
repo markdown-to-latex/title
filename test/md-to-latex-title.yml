@@ -1,18 +1,18 @@
 general:
-  author:
-    name: Surname A. A.
-  document:
-    topic: The awesome document
-    year: 2021
+    author:
+        name: Surname A. A.
+    document:
+        topic: The awesome document
+        year: 2021
 
 title:
-  report:
-    document:
-      subject: The subject
-      typeDative: homework 1
-    author:
-      group: GG1-1
-      variant: 99
-    reviewer:
-      name: Amogus S. U.
-      status: Imposter
+    report:
+        document:
+            subject: The subject
+            typeDative: homework 1
+        author:
+            group: GG1-1
+            variant: 99
+        reviewer:
+            name: Amogus S. U.
+            status: Imposter

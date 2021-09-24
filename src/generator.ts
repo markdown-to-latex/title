@@ -1,4 +1,4 @@
-import {MarkDownToLaTeXTitle} from './config/types';
+import { MarkDownToLaTeXTitle } from './config/types';
 
 type GeneratorChainValidator = (config: MarkDownToLaTeXTitle) => boolean;
 type GeneratorChainFunction = (config: MarkDownToLaTeXTitle) => string[];
