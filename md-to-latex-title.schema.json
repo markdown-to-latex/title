@@ -4,6 +4,9 @@
     "description": "MarkDown To LaTeX Title Configuration Schema",
     "type": "object",
     "properties": {
+        "latex": {
+            "$ref": "#/definitions/Latex"
+        },
         "general": {
             "$ref": "#/definitions/General"
         },
@@ -14,6 +17,31 @@
     "required": ["general", "title"],
     "additionalProperties": false,
     "definitions": {
+        "Latex": {
+            "type": "object",
+            "description": "General project LaTeX config",
+            "properties": {
+                "defaultFontSize": {
+                    "type": "number",
+                    "description": "Default font size",
+                    "default": 14,
+                    "minimum": 1
+                },
+                "applicationCodeFontSize": {
+                    "type": "number",
+                    "description": "Code application font size",
+                    "default": 10,
+                    "minimum": 1
+                },
+                "codeFontSize": {
+                    "type": "number",
+                    "description": "Code font size",
+                    "default": 12,
+                    "minimum": 1
+                }
+            },
+            "additionalProperties": false
+        },
         "General": {
             "type": "object",
             "description": "General information about the project",

@@ -1,4 +1,4 @@
-import { generateTitleConfigs } from '../src';
+import { generateTitleConfigs } from '../../src';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -14,6 +14,9 @@ describe('generateTitleConfigs', () => {
     });
 
     [
+        '\\defaultfontsize',
+        '\\applicationcodefontsize',
+        '\\codefontsize',
         '\\topic',
         '\\year',
         '\\student',

@@ -1,0 +1,10 @@
+\makeatletter
+\renewcommand\tableofcontents{%
+    \null\hfill\textbf{\sectionsize}\hfill\null\par
+    \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
+    \@starttoc{toc}%
+}
+\makeatother
+
+\dottedcontents{section}[1.6em]{}{0.8cm}{.3pc}
+\dottedcontents{subsection}[3.1em]{}{0.8cm}{.3pc}

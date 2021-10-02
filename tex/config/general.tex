@@ -1,0 +1,110 @@
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{varwidth}
+\usepackage{ifthen}
+\usepackage{fontspec}
+\usepackage{marginnote}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{icomma}
+\usepackage{extsizes}
+\usepackage{anyfontsize}
+\usepackage{environ}
+\usepackage[outputdir=out]{minted}
+\usepackage{needspace}
+\usepackage{lscape}
+\usepackage{verbatimbox}
+\usepackage{indentfirst}
+\usepackage{titletoc}
+\usepackage[center]{titlesec}
+\usepackage{xpatch,letltxmacro}
+\usepackage{threeparttable}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+
+\usepackage[singlelinecheck=false,justification=raggedright]{caption}
+\usepackage[left=3cm,right=1cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage[most]{tcolorbox}
+
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
+\setmainfont[
+    Path=./node_modules/@expo-google-fonts/pt-serif/,
+    Extension = .ttf,
+    UprightFont=*_400Regular,
+    BoldFont=*_700Bold,
+    ItalicFont=*_400Regular_Italic,
+    BoldItalicFont=*_700Bold_Italic,
+    Ligatures={TeX,Historic}
+]{PTSerif}
+\setsansfont[
+    Path=./node_modules/@expo-google-fonts/arimo/,
+    Extension = .ttf,
+    UprightFont=*_400Regular,
+    BoldFont=*_700Bold,
+    ItalicFont=*_400Regular_Italic,
+    BoldItalicFont=*_700Bold_Italic,
+    Ligatures={TeX,Historic}
+]{Arimo}
+\setmonofont[
+    Path=./node_modules/@expo-google-fonts/fira-code/,
+    Extension = .ttf,
+    UprightFont=*_400Regular,
+    BoldFont=*_700Bold,
+    ItalicFont=*_400Regular_Italic,
+    BoldItalicFont=*_700Bold_Italic,
+    Ligatures={TeX,Historic}
+]{FiraCode}
+
+
+\newcommand{\getstretch}{1}
+
+\renewcommand{\stretch}[1]{
+    \renewcommand{\getstretch}{#1}
+    \setstretch{#1}
+}
+
+
+\titleformat{\section}
+{\centering\bfseries}
+{\sectionsize\selectfont\thesection{} }
+{.5cm}
+{\sectionsize\selectfont}
+
+\titleformat{\subsection}
+{\centering\bfseries}
+{\sectionsize\selectfont\thesubsection{} }
+{.5cm}
+{\sectionsize\selectfont}
+
+\titlespacing*{\section}{0cm}{.5em}{0cm}
+\titlespacing*{\subsection}{0cm}{.5em}{0cm}
+
+
+\LetLtxMacro{\cminted}{\minted}
+\let\endcminted\endminted
+\xpretocmd{\cminted}{\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}}{}{}
+
+\newcommand{\minussingle}{\vspace{-1em}}
+\newcommand{\minusonehalf}{\vspace{-1.5em}}
+
+\newcommand{\indentlist}{\hspace{1cm}}
+
+
+\newcommand{\subtitle}[1]{
+    \setcounter{section}{0}
+    \section*{\bigsectionsize\selectfont\uppercase{#1}}
+    \addcontentsline{toc}{section}{\uppercase{#1}}
+}
+
+\newcommand{\sectionsize}{\fontsize{14pt}{14pt}}
+\newcommand{\bigsectionsize}{\fontsize{14pt}{14pt}}
+
+\renewcommand{\thesection}{\arabic{section}}
+
+
+\stretch{1.5}
+
+\setlength{\parindent}{\defaultindent}
+
+\newcommand{\cmdsize}{9}

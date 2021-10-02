@@ -1,6 +1,6 @@
 {
     "name": "@md-to-latex/title",
-    "version": "1.0.0-beta.3",
+    "version": "1.0.0-beta.4",
     "description": "MarkDown To LaTeX Titles",
     "main": "dist/index.js",
     "scripts": {
@@ -48,6 +48,9 @@
         "ts-node": "^10.2.1"
     },
     "dependencies": {
+        "@expo-google-fonts/arimo": "^0.2.0",
+        "@expo-google-fonts/fira-code": "^0.2.0",
+        "@expo-google-fonts/pt-serif": "^0.2.0",
         "js-yaml": "^4.1.0",
         "json5": "^2.2.0",
         "jsonschema": "^1.4.0"
