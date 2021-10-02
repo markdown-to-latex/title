@@ -29,14 +29,14 @@
 
 \defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
 \setmainfont[
-    Path=./node_modules/@expo-google-fonts/pt-serif/,
+    Path=./node_modules/@expo-google-fonts/tinos/,
     Extension = .ttf,
     UprightFont=*_400Regular,
     BoldFont=*_700Bold,
     ItalicFont=*_400Regular_Italic,
     BoldItalicFont=*_700Bold_Italic,
     Ligatures={TeX,Historic}
-]{PTSerif}
+]{Tinos}
 \setsansfont[
     Path=./node_modules/@expo-google-fonts/arimo/,
     Extension = .ttf,
@@ -47,14 +47,14 @@
     Ligatures={TeX,Historic}
 ]{Arimo}
 \setmonofont[
-    Path=./node_modules/@expo-google-fonts/fira-code/,
+    Path=./node_modules/@expo-google-fonts/cousine/,
     Extension = .ttf,
     UprightFont=*_400Regular,
     BoldFont=*_700Bold,
     ItalicFont=*_400Regular_Italic,
     BoldItalicFont=*_700Bold_Italic,
     Ligatures={TeX,Historic}
-]{FiraCode}
+]{Cousine}
 
 
 \newcommand{\getstretch}{1}
@@ -97,8 +97,8 @@
     \addcontentsline{toc}{section}{\uppercase{#1}}
 }
 
-\newcommand{\sectionsize}{\fontsize{14pt}{14pt}}
-\newcommand{\bigsectionsize}{\fontsize{14pt}{14pt}}
+\newcommand{\sectionsize}{\fontsize{\defaultfontsize}{\defaultfontsize}}
+\newcommand{\bigsectionsize}{\fontsize{\defaultfontsize}{\defaultfontsize}}
 
 \renewcommand{\thesection}{\arabic{section}}
 
