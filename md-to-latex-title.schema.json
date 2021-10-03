@@ -1,0 +1,182 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MarkDown To LaTeX Title",
+    "description": "MarkDown To LaTeX Title Configuration Schema",
+    "type": "object",
+    "properties": {
+        "latex": {
+            "$ref": "#/definitions/Latex"
+        },
+        "general": {
+            "$ref": "#/definitions/General"
+        },
+        "title": {
+            "$ref": "#/definitions/Title"
+        }
+    },
+    "required": ["general", "title"],
+    "additionalProperties": false,
+    "definitions": {
+        "Latex": {
+            "type": "object",
+            "description": "General project LaTeX config",
+            "properties": {
+                "defaultFontSize": {
+                    "type": "number",
+                    "description": "Default font size",
+                    "default": 14,
+                    "minimum": 1
+                },
+                "applicationCodeFontSize": {
+                    "type": "number",
+                    "description": "Code application font size",
+                    "default": 10,
+                    "minimum": 1
+                },
+                "codeFontSize": {
+                    "type": "number",
+                    "description": "Code font size",
+                    "default": 12,
+                    "minimum": 1
+                },
+                "tableFontSize": {
+                    "type": "number",
+                    "description": "Table font size",
+                    "minimum": 1
+                }
+            },
+            "additionalProperties": false
+        },
+        "General": {
+            "type": "object",
+            "description": "General information about the project",
+            "properties": {
+                "document": {
+                    "$ref": "#/definitions/GeneralDocument"
+                },
+                "author": {
+                    "$ref": "#/definitions/GeneralAuthor"
+                }
+            },
+            "required": ["author", "document"],
+            "additionalProperties": false
+        },
+        "GeneralDocument": {
+            "type": "object",
+            "description": "General information about the document",
+            "properties": {
+                "topic": {
+                    "type": "string",
+                    "description": "Document topic",
+                    "minLength": 0,
+                    "examples": ["Learning the I/O in Python"]
+                },
+                "year": {
+                    "type": "number",
+                    "description": "Document year",
+                    "minimum": 0,
+                    "maximum": 9999,
+                    "examples": ["2021"]
+                }
+            },
+            "required": ["topic", "year"],
+            "additionalProperties": false
+        },
+        "GeneralAuthor": {
+            "type": "object",
+            "description": "General information about the author",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Author name",
+                    "minLength": 0
+                }
+            },
+            "required": ["name"],
+            "additionalProperties": false
+        },
+        "Title": {
+            "type": "object",
+            "description": "Report title configuration",
+            "properties": {
+                "report": {
+                    "$ref": "#/definitions/TitleReport"
+                }
+            },
+            "minProperties": 1,
+            "additionalProperties": false
+        },
+        "TitleReport": {
+            "type": "object",
+            "description": "Report title configuration",
+            "properties": {
+                "document": {
+                    "$ref": "#/definitions/TitleReportDocument"
+                },
+                "author": {
+                    "$ref": "#/definitions/TitleReportAuthor"
+                },
+                "reviewer": {
+                    "$ref": "#/definitions/TitleReportReviewer"
+                }
+            },
+            "required": ["document", "author", "reviewer"],
+            "additionalProperties": false
+        },
+        "TitleReportDocument": {
+            "type": "object",
+            "description": "Document configuration",
+            "properties": {
+                "typeDative": {
+                    "type": "string",
+                    "description": "Type of the document. Dative case",
+                    "minLength": 0,
+                    "examples": ["домашнЕМУ заданИЮ №1"]
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "Document subject",
+                    "minLength": 0
+                }
+            },
+            "required": ["subject", "typeDative"],
+            "additionalProperties": false
+        },
+        "TitleReportAuthor": {
+            "type": "object",
+            "description": "Document author information",
+            "properties": {
+                "variant": {
+                    "type": "number",
+                    "description": "Student variant",
+                    "minLength": 0
+                },
+                "group": {
+                    "type": "string",
+                    "description": "Student group",
+                    "minLength": 0
+                }
+            },
+            "required": ["group"],
+            "additionalProperties": false
+        },
+        "TitleReportReviewer": {
+            "type": "object",
+            "description": "Information about the reviewer",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Reviewer name",
+                    "minLength": 0
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Reviewer status",
+                    "minLength": 0
+                }
+            },
+            "required": ["name", "status"],
+            "additionalProperties": false
+        }
+    }
+}

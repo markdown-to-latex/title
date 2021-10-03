@@ -1,0 +1,188 @@
+\newcommand{\placeholder}{
+    \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommand{\titletitle}{
+    \fontsize{\getfontsize}{\getfontsize}\selectfont
+    {
+        \centering
+        \textbf{
+            \setstretch{1.15}
+            \fontsize{12}{12}\selectfont
+            \begin{tabularx}{\textwidth}{@{}c@{}@{}Y@{}}
+                \begin{tabular}[c]{@{}c@{}}
+                    \includegraphics[width=2.2cm]{BMSTU} \\
+                    \text{}                       \\
+                    \text{}
+                \end{tabular}
+                & \begin{tabular}[c]{c}
+                      Министерство науки и высшего образования Российской Федерации    \\
+                      Федеральное государственное бюджетное образовательное учреждение \\
+                      высшего образования                                              \\
+                      «Московский государственный технический университет              \\
+                      имени Н.Э. Баумана\\
+                      (национальный исследовательский университет)»\\
+                      (МГТУ им. Н.Э. Баумана)
+                \end{tabular}
+            \end{tabularx}
+        }
+    }
+    \vspace{.2cm}
+    \par\vspace{-1.41\ht\strutbox}\noindent\hrulefill\par
+    \par\vspace{-1.41\ht\strutbox}\noindent\hrulefill\par
+    \par\vspace{-1.41\ht\strutbox}\noindent\hrulefill\par
+    \par\vspace{-1.41\ht\strutbox}\noindent\hrulefill\par
+    \par\vspace{-1.41\ht\strutbox}\noindent\hrulefill\par
+    \par\vspace{-1.41\ht\strutbox}\noindent\hrulefill\par
+    \par\vspace{-1.41\ht\strutbox}\noindent\hrulefill\par
+    \par\vspace{-1.35\ht\strutbox}\noindent\hrulefill\par
+    \par\vspace{-1.41\ht\strutbox}\noindent\hrulefill\par
+
+    \vspace{-.2cm}
+
+    \begin{flushleft}
+        \fontsize{12}{12}\selectfont
+
+        \noindent
+        \begin{tabular}{ll}
+            ФАКУЛЬТЕТ    & «Информатика и системы управления» (ИУ) \\[6pt]
+            КАФЕДРА      & «Информационная безопасность» (ИУ8)     \\
+            \hspace{3cm} &
+        \end{tabular}
+    \end{flushleft}
+}
+
+\newcommand{\titlestudenttable}{
+    \begin{justify}
+        \noindent\fontsize{12}{12}\selectfont
+        \begin{tabularx}{\textwidth}{@{}X@{}l}
+            \noindent\begin{tabular}[c]{@{}l@{}}
+                         \noindent Студент: \\
+                         \practicestudent
+            \end{tabular} &
+            \begin{tabular}[c]{@{}c@{}}
+                \\
+                \\
+                \\
+                \placeholder \\
+                {\fontsize{10}{10}\selectfont (подпись, дата)}
+            \end{tabular}
+            \\
+            \begin{tabular}[c]{@{}l@{}}
+                Руководитель от предприятия: \\
+                \practicefacilityleader
+            \end{tabular} & \begin{tabular}[c]{@{}c@{}}
+                                \\
+                                \\
+                                \\
+                                \placeholder \\
+                                {\fontsize{10}{10}\selectfont (подпись, дата)}
+            \end{tabular} \\
+            \begin{tabular}[c]{@{}l@{}}
+                Руководитель от кафедры: \\
+                \practicereviewer
+            \end{tabular} & \begin{tabular}[c]{@{}c@{}}
+                                \\
+                                \\
+                                \\
+                                \placeholder \\
+                                {\fontsize{10}{10}\selectfont (подпись, дата)}
+            \end{tabular}
+        \end{tabularx}
+    \end{justify}
+}
+
+\leavevmode\titletitle
+
+\begin{center}
+    \fontsize{18}{18}\selectfont
+    \textbf{\underline{ОТЧЁТ ПО \MakeUppercase{\practicekind} ПРАКТИКЕ}}
+\end{center}
+
+\text{}
+
+\begin{justify}
+    \fontsize{12}{12}\selectfont
+
+    \noindent
+    Тип практики: \practicetype
+
+    \noindent
+    Название предприятия: \practicefacility
+\end{justify}
+
+\vfill
+
+\titlestudenttable
+
+\text{}
+
+\begin{justify}
+    \noindent\fontsize{12}{12}\selectfont
+    Оценка: \placeholder
+\end{justify}
+
+\text{}
+
+\text{}
+
+\text{}
+
+\begin{center}
+    \fontsize{12}{12}\selectfont
+
+    Москва, \year
+\end{center}
+
+\thispagestyle{empty}
+
+
+\newpage
+\clearpage
+\thispagestyle{empty}
+\titletitle
+
+\begin{center}
+    \fontsize{18}{18}\selectfont
+    \setstretch{1.5}
+    \textbf{\underline{ИНДИВИДУАЛЬНОЕ ЗАДАНИЕ НА ПРАКТИКУ}}
+\end{center}
+
+\begin{justify}
+    \fontsize{12}{12}\selectfont
+    \noindent
+    Тип практики: \practicetype
+
+    \noindent
+    Название предприятия: \practicefacility
+
+    \noindent
+    Сроки практики: \practiceduration
+
+    \noindent
+    Специальность: \practicespec
+
+\end{justify}
+
+\begin{justify}
+    \setstretch{1.5}
+    \fontsize{12}{12}\selectfont
+    За время прохождения практики студенту надлежит согласно программе практики:
+
+    \practicetasks
+\end{justify}
+
+\minussingle
+\titlestudenttable
+
+\vfill
+
+\begin{justify}
+    \fontsize{10}{10}\selectfont
+    \noindent Является обязательным листом отчёта по практике. Лист 2
+
+    \noindent Документ не должен содержать информацию, отнесённую в установленном порядке к государственной тайне РФ.
+\end{justify}
+
+\newpage

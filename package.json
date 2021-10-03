@@ -1,0 +1,58 @@
+{
+    "name": "@md-to-latex/title",
+    "version": "1.0.0-beta.8",
+    "description": "MarkDown To LaTeX Titles",
+    "main": "dist/index.js",
+    "scripts": {
+        "prebuild": "npm run convert-schema",
+        "build": "tsc --build",
+        "watch": "tsc --build --watch",
+        "prettier": "prettier --check .",
+        "prettier-fix": "prettier --write .",
+        "test": "jest test",
+        "convert-schema": "node utils/convert-schema.js && prettier --write src/config/types.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/markdown-to-latex/title.git"
+    },
+    "keywords": [
+        "markdown",
+        "latex",
+        "title",
+        "report",
+        "cli"
+    ],
+    "author": "Anatolii Titov <a@toliak.ru>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/markdown-to-latex/title/issues"
+    },
+    "files": [
+        "tex/**",
+        "dist/**",
+        "assets/**",
+        "*.schema.json"
+    ],
+    "homepage": "https://github.com/markdown-to-latex/title#readme",
+    "devDependencies": {
+        "@types/jest": "^27.0.1",
+        "@types/js-yaml": "^4.0.2",
+        "@types/json5": "^2.2.0",
+        "@types/node": "^16.9.6",
+        "typescript": "^4.4.3",
+        "prettier": "^2.4.1",
+        "jest": "^27.0.6",
+        "json-schema-to-typescript": "^10.1.5",
+        "ts-jest": "^27.0.5",
+        "ts-node": "^10.2.1"
+    },
+    "dependencies": {
+        "@expo-google-fonts/arimo": "^0.2.0",
+        "@expo-google-fonts/cousine": "^0.2.0",
+        "@expo-google-fonts/tinos": "^0.2.0",
+        "js-yaml": "^4.1.0",
+        "json5": "^2.2.0",
+        "jsonschema": "^1.4.0"
+    }
+}
