@@ -38,6 +38,11 @@
                     "description": "Code font size",
                     "default": 12,
                     "minimum": 1
+                },
+                "tableFontSize": {
+                    "type": "number",
+                    "description": "Table font size",
+                    "minimum": 1
                 }
             },
             "additionalProperties": false

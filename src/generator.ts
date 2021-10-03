@@ -57,6 +57,22 @@ const latexGeneratorChain: ChainItem[] = [
         ],
         validator: config => !config.latex?.codeFontSize,
     },
+    {
+        function: config => [
+            `
+\\newcommand{\\tablefontsize}{${config.latex?.tableFontSize}pt}
+`,
+        ],
+        validator: config => !!config.latex?.tableFontSize,
+    },
+    {
+        function: config => [
+            `
+\\newcommand{\\tablefontsize}{\\defaultfontsize}
+`,
+        ],
+        validator: config => !config.latex?.tableFontSize,
+    },
 ];
 
 const generalGeneratorChain: ChainItem[] = [
