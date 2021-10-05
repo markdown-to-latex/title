@@ -110,6 +110,15 @@ const reportTitleGeneratorChain: ChainItem[] = [
         ],
         validator: config => !!config.title.report?.author.variant,
     },
+    {
+        function: () => [
+            `
+\\newcommand{\\variantnumber}{}
+\\newcommand{\\variant}{}
+`,
+        ],
+        validator: config => !config.title.report?.author.variant,
+    },
 ];
 
 const titleGeneratorChain: ChainItem[] = [...reportTitleGeneratorChain];
