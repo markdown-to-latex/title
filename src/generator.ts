@@ -44,6 +44,22 @@ const latexGeneratorChain: ChainItem[] = [
     {
         function: config => [
             `
+\\newcommand{\\applicationcodelineheight}{${config.latex?.applicationCodeLineHeight}}
+`,
+        ],
+        validator: config => !!config.latex?.applicationCodeLineHeight,
+    },
+    {
+        function: config => [
+            `
+\\newcommand{\\applicationcodelineheight}{1.2}
+`,
+        ],
+        validator: config => !config.latex?.applicationCodeLineHeight,
+    },
+    {
+        function: config => [
+            `
 \\newcommand{\\codefontsize}{${config.latex?.codeFontSize}pt}
 `,
         ],

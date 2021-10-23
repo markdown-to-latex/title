@@ -33,6 +33,12 @@
                     "default": 10,
                     "minimum": 1
                 },
+                "applicationCodeLineHeight": {
+                    "type": "number",
+                    "description": "Code application line height",
+                    "default": 1.2,
+                    "minimum": 0.1
+                },
                 "codeFontSize": {
                     "type": "number",
                     "description": "Code font size",

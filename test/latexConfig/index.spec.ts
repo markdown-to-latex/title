@@ -16,6 +16,7 @@ describe('generateTitleConfigs with LaTeX', () => {
     [
         '\\defaultfontsize',
         '\\applicationcodefontsize',
+        '\\applicationcodelineheight',
         '\\codefontsize',
         '\\topic',
         '\\year',
