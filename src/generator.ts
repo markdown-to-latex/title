@@ -104,27 +104,30 @@ const generalGeneratorChain: ChainItem[] = [
     },
 ];
 
+// ============= ============== =============
+// ============= report section =============
+// ============= ============== =============
 const reportTitleGeneratorChain: ChainItem[] = [
     {
         function: config => [
             `
-\\newcommand{\\reportsubjectsubject}{${config.title.report?.document.typeDative}}
-\\newcommand{\\reportsubject}{${config.title.report?.document.subject}}
-\\newcommand{\\studentgroup}{${config.title.report?.author.group}}
-\\newcommand{\\lecturer}{${config.title.report?.reviewer.name}}
-\\newcommand{\\lecturerprof}{${config.title.report?.reviewer.status}}
+\\newcommand{\\reportsubjectsubject}{${config.title?.report?.document.typeDative}}
+\\newcommand{\\reportsubject}{${config.title?.report?.document.subject}}
+\\newcommand{\\studentgroup}{${config.title?.report?.author.group}}
+\\newcommand{\\lecturer}{${config.title?.report?.reviewer.name}}
+\\newcommand{\\lecturerprof}{${config.title?.report?.reviewer.status}}
 `,
         ],
-        validator: config => !!config.title.report,
+        validator: config => !!config.title?.report,
     },
     {
         function: config => [
             `
-\\newcommand{\\variantnumber}{${config.title.report?.author.variant}}
+\\newcommand{\\variantnumber}{${config.title?.report?.author.variant}}
 \\newcommand{\\variant}{Вариант «\\variantnumber»}
 `,
         ],
-        validator: config => !!config.title.report?.author.variant,
+        validator: config => !!config.title?.report?.author.variant,
     },
     {
         function: () => [
@@ -133,11 +136,39 @@ const reportTitleGeneratorChain: ChainItem[] = [
 \\newcommand{\\variant}{}
 `,
         ],
-        validator: config => !config.title.report?.author.variant,
+        validator: config => !config.title?.report?.author.variant,
     },
 ];
 
-const titleGeneratorChain: ChainItem[] = [...reportTitleGeneratorChain];
+const practiceTitleGeneratorChain: ChainItem[] = [
+    {
+        function: config => [
+            `
+\\newcommand{\\practiceid}{${config.title?.practice?.author.afterCourse}}
+\\newcommand{\\practicespec}{${config.title?.practice?.author.specializationExpanded.replace(
+                /_/g,
+                '\\_',
+            )}}
+
+\\newcommand{\\practicefacility}{${config.title?.practice?.place.placeName}}
+\\newcommand{\\practicefacilityleader}{${
+                config.title?.practice?.place.placeCurator
+            }}
+\\newcommand{\\practiceduration}{${config.title?.practice?.place.timeBounds}}
+
+\\newcommand{\\practicetasks}{\\printall${config.title?.practice?.task
+                .map(t => '{' + t + '}')
+                .join('')}{}}
+`,
+        ],
+        validator: config => !!config.title?.practice,
+    },
+];
+
+const titleGeneratorChain: ChainItem[] = [
+    ...reportTitleGeneratorChain,
+    ...practiceTitleGeneratorChain,
+];
 
 const generatorChain: ChainItem[] = [
     ...latexGeneratorChain,

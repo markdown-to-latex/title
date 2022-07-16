@@ -1,0 +1,27 @@
+latex:
+    defaultFontSize: 12
+    codeFontSize: 10
+    applicationCodeFontSize: 8
+
+general:
+    author:
+        name: Bebra E.N.
+    document:
+        topic: NaN
+        year: 2022
+
+title:
+    practice:
+        author:
+            afterCourse: 3
+            specializationExpanded: _Gang_USSR_
+        reviewer:
+            value: Amongus Sus Supermaleikum
+        place:
+            placeName: Twitter
+            placeCurator: Elon Musk
+            timeBounds: 01.01.1970-19.01.2038
+        task:
+            - Do a thing;
+            - Investigate another thing;
+            - Collect some money.

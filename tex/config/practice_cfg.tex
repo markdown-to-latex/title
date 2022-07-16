@@ -1,0 +1,50 @@
+\makeatletter
+\def\Pracf#1{\expandafter\@Pracf\csname c@#1\endcsname}
+\def\@Pracf#1{%
+    \ifcase#1\or
+    учебной\or%
+    учебной\or%
+    производственной\or%
+    производственной\or%
+    производственной\else\@ctrerr\fi%
+}
+\makeatother
+
+\makeatletter
+\def\Pracs#1{\expandafter\@Pracs\csname c@#1\endcsname}
+\def\@Pracs#1{%
+    \ifcase#1
+    \TODO\or
+    учебная\or%
+    учебно-технологическая\or%
+    производственная\or%
+    технологическая\or%
+    эксплуатационная\else\@ctrerr\fi%
+}
+\makeatother
+
+\newcounter{yearascntr}
+\newcommand{\GetPracticeFirst}{\Pracf{yearascntr}}
+\newcommand{\GetPracticeSecond}{\Pracs{yearascntr}}
+
+
+\def\getfontsize{14}% это кто
+\setcounter{yearascntr}{\practiceid}
+\def\practicekind{\GetPracticeFirst}
+\def\practicetype{\GetPracticeSecond}
+
+
+\newcommand{\printall}[1]{%
+\ifthenelse{\equal{#1}{}}%
+{}%
+{\practprocesstask{#1}\expandafter\csname printall\endcsname}%
+}
+
+\newcommand{\practprocesstask}[1]{\noindent-\,\practformat{#1}\\{}}
+
+% solution from: https://tex.stackexchange.com/questions/316730/extract-first-word-in-a-string
+\makeatletter
+\def\prformone#1 #2\@nil{#1\unskip}
+\def\prformtwo#1 #2\@nil{#2\unskip}
+\newcommand{\practformat}[1]{\textbf{\prformone#1 \@nil} \prformtwo#1 \@nil}
+\makeatother

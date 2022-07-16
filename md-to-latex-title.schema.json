@@ -14,7 +14,7 @@
             "$ref": "#/definitions/Title"
         }
     },
-    "required": ["general", "title"],
+    "required": ["general"],
     "additionalProperties": false,
     "definitions": {
         "Latex": {
@@ -107,6 +107,9 @@
             "properties": {
                 "report": {
                     "$ref": "#/definitions/TitleReport"
+                },
+                "practice": {
+                    "$ref": "#/definitions/TitlePractice"
                 }
             },
             "minProperties": 1,
@@ -182,6 +185,90 @@
                 }
             },
             "required": ["name", "status"],
+            "additionalProperties": false
+        },
+
+        "TitlePractice": {
+            "type": "object",
+            "description": "Report title configuration",
+            "properties": {
+                "author": {
+                    "$ref": "#/definitions/TitlePracticeAuthor"
+                },
+                "reviewer": {
+                    "$ref": "#/definitions/TitlePracticeReviewer"
+                },
+                "place": {
+                    "$ref": "#/definitions/TitlePracticeTimePlace"
+                },
+                "task": {
+                    "$ref": "#/definitions/TitlePracticeTask"
+                }
+            },
+            "required": ["author", "reviewer", "place", "task"],
+            "additionalProperties": false
+        },
+        "TitlePracticeAuthor": {
+            "type": "object",
+            "description": "Document author information",
+            "properties": {
+                "afterCourse": {
+                    "type": "number",
+                    "description": "Current (previous) year of graduation, f.e. 4",
+                    "minLength": 0
+                },
+                "specializationExpanded": {
+                    "type": "string",
+                    "description": "Specialization, f.e. 10.05.03_01",
+                    "minLength": 0
+                }
+            },
+            "required": ["afterCourse", "specializationExpanded"],
+            "additionalProperties": false
+        },
+        "TitlePracticeTimePlace": {
+            "type": "object",
+            "description": "Practice place and time information",
+            "properties": {
+                "placeName": {
+                    "type": "string",
+                    "description": "Place name, f.e. Вертолёты России",
+                    "minLength": 0
+                },
+                "placeCurator": {
+                    "type": "string",
+                    "description": "Place curator with their post",
+                    "minLength": 0
+                },
+                "timeBounds": {
+                    "type": "string",
+                    "description": "Time bounds, f.e. 01.07.2022-01.08.2022",
+                    "minLength": 0
+                }
+            },
+            "required": ["placeName", "placeCurator", "timeBounds"],
+            "additionalProperties": false
+        },
+        "TitlePracticeReviewer": {
+            "type": "object",
+            "description": "Practice place and time information",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "description": "Practice reviewer name + status",
+                    "minLength": 0
+                }
+            },
+            "required": ["value"],
+            "additionalProperties": false
+        },
+        "TitlePracticeTask": {
+            "type": "array",
+            "description": "Practice tasks",
+            "items": {
+                "type": "string"
+            },
+            "required": ["value"],
             "additionalProperties": false
         }
     }
