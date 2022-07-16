@@ -150,6 +150,8 @@ const practiceTitleGeneratorChain: ChainItem[] = [
                 '\\_',
             )}}
 
+\\newcommand{\\practicereviewer}{${config.title?.practice?.reviewer.value}}
+
 \\newcommand{\\practicefacility}{${config.title?.practice?.place.placeName}}
 \\newcommand{\\practicefacilityleader}{${
                 config.title?.practice?.place.placeCurator
