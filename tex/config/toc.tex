@@ -1,10 +1,14 @@
 \makeatletter
 \renewcommand\tableofcontents{%
-    \null\hfill\textbf{\sectionsize}\hfill\null\par
     \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
     \@starttoc{toc}%
 }
 \makeatother
 
-\dottedcontents{section}[1.6em]{}{0.8cm}{.3pc}
-\dottedcontents{subsection}[3.1em]{}{0.8cm}{.3pc}
+\dottedcontents{section}[0cm]{}{0cm}{.3pc}
+\dottedcontents{subsection}[0.8cm+0.5cm]{}{0.8cm}{.3pc}
+\dottedcontents{subsubsection}[1.6em+1cm+0.7cm]{}{1.5cm}{.3pc}
+
+\renewcommand{\thesection}{}% Remove section references...
+\renewcommand{\thesubsection}{\arabic{subsection}}%... from subsections
+\renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}%... from subsections

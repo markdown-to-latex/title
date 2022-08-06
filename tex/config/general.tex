@@ -68,18 +68,25 @@
 
 \titleformat{\section}
 {\centering\bfseries}
-{\sectionsize\selectfont\thesection{} }
+{\sectionsize\selectfont }
 {.5cm}
 {\sectionsize\selectfont}
 
 \titleformat{\subsection}
-{\centering\bfseries}
-{\sectionsize\selectfont\thesubsection{} }
+{\bfseries}
+{\sectionsize\selectfont\hspace{\defaultindent}\thesubsection{} }
 {.5cm}
 {\sectionsize\selectfont}
 
-\titlespacing*{\section}{0cm}{.5em}{0cm}
-\titlespacing*{\subsection}{0cm}{.5em}{0cm}
+\titleformat{\subsubsection}
+{\bfseries}
+{\sectionsize\selectfont\hspace{\defaultindent}\thesubsubsection{} }
+{.5cm}
+{\sectionsize\selectfont}
+
+\titlespacing*{\section}{0cm}{\defaultfontsize * 300 / 1000}{0cm}
+\titlespacing*{\subsection}{0cm}{\defaultfontsize * 300 / 1000}{0cm}
+\titlespacing*{\subsubsection}{0cm}{\defaultfontsize * 300 / 1000}{0cm}
 
 
 \LetLtxMacro{\cminted}{\minted}
@@ -91,11 +98,9 @@
 
 \newcommand{\indentlist}{\hspace{1cm}}
 
-
-\newcommand{\subtitle}[1]{
-    \setcounter{section}{0}
-    \section*{\bigsectionsize\selectfont\uppercase{#1}}
-    \addcontentsline{toc}{section}{\uppercase{#1}}
+\newcommand{\sectionbutitiscentered}[1]{
+    \noindent
+    \hfill\textbf{\bigsectionsize\selectfont{}#1}\hfill
 }
 
 \newcommand{\sectionsize}{\fontsize{\defaultfontsize}{\defaultfontsize}}
@@ -104,7 +109,8 @@
 \renewcommand{\thesection}{\arabic{section}}
 
 
-\stretch{1.5}
+% 1.43 in latex equals to 1.5 in word in libreoffice
+\stretch{1.423}
 
 \newcommand{\defaultindent}{1.25cm}
 \setlength{\parindent}{\defaultindent}
