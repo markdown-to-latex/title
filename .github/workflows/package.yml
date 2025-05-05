@@ -12,14 +12,14 @@ jobs:
     prettier:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4.2.0
+            - uses: actions/checkout@v4
             - name: Setup node 20
-              uses: actions/setup-node@v4.0.2
+              uses: actions/setup-node@v4
               with:
                   node-version: 20.x
 
             - name: Cache Node files
-              uses: actions/cache@v4.0.2
+              uses: actions/cache@v4
               env:
                   cache-name: cache-node-modules
               with:
@@ -41,13 +41,13 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4.2.0
+            - uses: actions/checkout@v4
             - name: Setup node 20
-              uses: actions/setup-node@v4.0.2
+              uses: actions/setup-node@v4
               with:
                   node-version: 20.x
             - name: Cache Node files
-              uses: actions/cache@v4.0.2
+              uses: actions/cache@v4
               env:
                   cache-name: cache-node-modules
               with:
@@ -75,14 +75,14 @@ jobs:
             - test
             - prettier
         steps:
-            - uses: actions/checkout@v4.2.0
+            - uses: actions/checkout@v4
             - name: Setup node 20
-              uses: actions/setup-node@v4.0.2
+              uses: actions/setup-node@v4
               with:
                   node-version: '20.x'
                   registry-url: 'https://registry.npmjs.org'
             - name: Cache Node files
-              uses: actions/cache@v4.0.2
+              uses: actions/cache@v4
               env:
                   cache-name: cache-node-modules
               with:
