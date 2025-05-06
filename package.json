@@ -48,7 +48,7 @@
         "ts-node": "^10.9.2"
     },
     "dependencies": {
-        "@expo-google-fonts/arimo": "^0.2.3",
+        "@expo-google-fonts/arimo": "^0.3.0",
         "@expo-google-fonts/cousine": "^0.2.3",
         "@expo-google-fonts/tinos": "^0.2.3",
         "js-yaml": "^4.1.0",
